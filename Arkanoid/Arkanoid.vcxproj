@@ -99,7 +99,7 @@
       </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy "$(SolutionDir)src\raylib\lib\raylib.dll" "$(OutDir)" /y
+      <Command>copy "$(SolutionDir)raylib.dll" "$(OutDir)" /y
 mkdir "$(OutDir)assets" /y
 xcopy "$(SolutionDir)resource\assets" "$(OutDir)assets" /s /y</Command>
     </PostBuildEvent>
@@ -136,7 +136,7 @@ xcopy "$(SolutionDir)resource\assets" "$(OutDir)assets" /s /y</Command>
       </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy "$(SolutionDir)src\raylib\lib\raylib.dll" "$(OutDir)" /y
+      <Command>copy "$(SolutionDir)raylib.dll" "$(OutDir)" /y
 mkdir "$(OutDir)assets" /y
 xcopy "$(SolutionDir)resource\assets" "$(OutDir)assets" /s /y</Command>
     </PostBuildEvent>
