@@ -10,10 +10,45 @@
     <Filter Include="src">
       <UniqueIdentifier>{1a4430cf-5de0-44f2-b640-ff1ae5e436bc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="resource\assets\img">
+      <UniqueIdentifier>{554bd096-49d7-4d2d-bb6d-be99d06992ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource\assets\sound">
+      <UniqueIdentifier>{bdd4aaf1-2e85-49de-9074-2f9570a985c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Ball">
+      <UniqueIdentifier>{4ddd87d8-607d-4ced-ae8f-c9680447bdfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Player">
+      <UniqueIdentifier>{0b88594b-75f6-4ad3-9918-3bb6a627ef1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ArkanoidGame">
+      <UniqueIdentifier>{6414e2e9-8e93-4cf9-a56c-4e98e62d77ce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\ball\ball.cpp">
+      <Filter>src\Ball</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Player\Player.cpp">
+      <Filter>src\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ArkanoidGame\arkanoid_game.cpp">
+      <Filter>src\ArkanoidGame</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\ball\ball.h">
+      <Filter>src\Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Player\Player.h">
+      <Filter>src\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ArkanoidGame\arkanoid_game.h">
+      <Filter>src\ArkanoidGame</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

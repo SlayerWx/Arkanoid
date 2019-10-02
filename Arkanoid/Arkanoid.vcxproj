@@ -19,7 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\ArkanoidGame\arkanoid_game.cpp" />
+    <ClCompile Include="..\src\ball\ball.cpp" />
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\Player\Player.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\ArkanoidGame\arkanoid_game.h" />
+    <ClInclude Include="..\src\ball\ball.h" />
+    <ClInclude Include="..\src\Player\Player.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

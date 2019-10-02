@@ -1,4 +1,14 @@
-#include "raylib.h"
+#include "ArkanoidGame/arkanoid_game.h"
+using namespace Arkanoid;
+int main()
+{
+	ArkanoidGame* arkanoid = new ArkanoidGame();
+	arkanoid->game();
+	return 0;
+}
+
+
+/*#include "raylib.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -64,13 +74,9 @@ int main(void)
 {
 	// Initialization (Note windowTitle is unused on Android)
 	//---------------------------------------------------------
-	InitWindow(screenWidth, screenHeight, "sample game: arkanoid");
+	InitWindow(screenWidth, screenHeight, "Ruffo Maximiliano - arkanoid");
 
 	InitGame();
-
-#if defined(PLATFORM_WEB)
-	emscripten_set_main_loop(UpdateDrawFrame, 0, 1);
-#else
 	SetTargetFPS(60);
 	//--------------------------------------------------------------------------------------
 
@@ -82,7 +88,6 @@ int main(void)
 		UpdateDrawFrame();
 		//----------------------------------------------------------------------------------
 	}
-#endif
 	// De-Initialization
 	//--------------------------------------------------------------------------------------
 	UnloadGame();         // Unload loaded data (textures, sounds, models...)
@@ -304,4 +309,4 @@ void UpdateDrawFrame(void)
 {
 	UpdateGame();
 	DrawGame();
-}
+}*/
