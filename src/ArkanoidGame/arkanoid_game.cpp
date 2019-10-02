@@ -16,4 +16,8 @@ void ArkanoidGame::gameLoop()
 		break;
 	}
 }
+void ArkanoidGame::menu()
+{
+
+}
 }

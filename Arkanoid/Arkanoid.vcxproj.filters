@@ -25,6 +25,9 @@
     <Filter Include="src\ArkanoidGame">
       <UniqueIdentifier>{6414e2e9-8e93-4cf9-a56c-4e98e62d77ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Menu">
+      <UniqueIdentifier>{02b04c3f-c84a-400e-848b-6dfb8b73b7b2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
@@ -39,6 +42,9 @@
     <ClCompile Include="..\src\ArkanoidGame\arkanoid_game.cpp">
       <Filter>src\ArkanoidGame</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Menu\menu.cpp">
+      <Filter>src\Menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\ball\ball.h">
@@ -49,6 +55,9 @@
     </ClInclude>
     <ClInclude Include="..\src\ArkanoidGame\arkanoid_game.h">
       <Filter>src\ArkanoidGame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Menu\menu.h">
+      <Filter>src\Menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
