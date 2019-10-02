@@ -1,21 +1,20 @@
 #ifndef ARKANOIDGAME
 #define ARKANOIDGAME
-namespace Arkanoid
+namespace arkanoid
 {
 class ArkanoidGame
 {
 private:
 	enum GameScreen
 	{
-		MENU, GAMEPLAY, ENDING
+		MENU, GAMEPLAY
 	};
+	GameScreen gameStatus;
 public:
 	ArkanoidGame();
+	void gameLoop();
+	void menu();
 	void game();
-	void initMenu();
-	void updateMenu();
-	void drawMenu();
-	
 };
 }
 #endif

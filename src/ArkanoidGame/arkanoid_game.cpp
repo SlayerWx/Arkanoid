@@ -1,23 +1,19 @@
 #include "arkanoid_game.h"
-namespace Arkanoid
+namespace arkanoid
 {
 ArkanoidGame::ArkanoidGame()
 {
 }
-void ArkanoidGame::game()
+void ArkanoidGame::gameLoop()
 {
-
-}
-void ArkanoidGame::initMenu()
-{
-
-}
-void ArkanoidGame::updateMenu()
-{
-
-}
-void ArkanoidGame::drawMenu()
-{
-
+	switch (gameStatus)
+	{
+	case MENU:
+		menu();
+		break;
+	case GAMEPLAY:
+		game();
+		break;
+	}
 }
 }

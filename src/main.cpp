@@ -1,9 +1,9 @@
 #include "ArkanoidGame/arkanoid_game.h"
-using namespace Arkanoid;
+using namespace arkanoid;
 int main()
 {
-	ArkanoidGame* arkanoid = new ArkanoidGame();
-	arkanoid->game();
+	ArkanoidGame* videoGame = new ArkanoidGame();
+	videoGame->game();
 	return 0;
 }
 
