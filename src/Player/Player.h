@@ -7,9 +7,11 @@ private:
 	Vector2 position;
 	Vector2 size;
 	int life;
-	int speed;
+	static int speed;
 public:
-	Player(Vector2 initialPosition,Vector2 newSize,int newLife,int newSpeed);
+	Player(Vector2 initialPosition,Vector2 newSize,int newLife);
+	void drawMe();
+	void move();
 };
 #endif
 
