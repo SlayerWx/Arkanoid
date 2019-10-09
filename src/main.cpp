@@ -6,6 +6,7 @@ int main()
 {
 	ArkanoidGame* videoGame = new ArkanoidGame(800, 450);
 	videoGame->game();
+	delete videoGame;
 	return 0;
 }
 

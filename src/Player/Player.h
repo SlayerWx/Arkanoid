@@ -12,6 +12,8 @@ public:
 	Player(Vector2 initialPosition,Vector2 newSize,int newLife);
 	void drawMe();
 	void move();
+	Vector2 playerPosition();
+	static int getSpeed();
 };
 #endif
 

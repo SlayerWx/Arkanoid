@@ -1,15 +1,14 @@
 #ifndef MENU_H
 #define MENU_H
 #include "Player/Player.h"
+#include "ball/ball.h"
 class Menu
 {
 public:
 	Menu();
-	void loop();
-	static bool inMenu;
-private:
 	void init();
-	void update(Player* player);
+	void update(Player* player,Ball* balls[]);
 	void draw(Player* player);
+private:
 };
 #endif

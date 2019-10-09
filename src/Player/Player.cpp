@@ -28,3 +28,12 @@ void Player::move()
 		
 	}
 }
+Vector2 Player::playerPosition()
+{
+	return position;
+}
+
+int Player::getSpeed()
+{
+	return speed;
+}

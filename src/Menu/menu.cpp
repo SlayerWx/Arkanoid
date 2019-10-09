@@ -1,36 +1,28 @@
 #include "menu.h"
 #include "raylib.h"
 #include "ArkanoidGame/arkanoid_game.h"
-bool Menu::inMenu = true;
+#include "ball/ball.h"
 using namespace arkanoid;
 Menu::Menu()
 {
-	inMenu = true;
-}
-void Menu::loop()
-{
-	Player* player = new Player({ static_cast<float>(ArkanoidGame::getGameScreenWidth())/2,
-								  static_cast<float>(ArkanoidGame::getGameScreenHeight())-15}, 
-								{ 10,10 }, 1);
-	init();
-	while (inMenu)
-	{
-		update(player);
-		draw(player);
-	}
 }
 void Menu::init()
 {
 
 }
-void Menu::update(Player* player)
+void Menu::update(Player* player,Ball* balls[])
 {
 	player->move();
+	for (int i = 0; i < cantBalls; i++)
+	{
+
+	}
 }
 void Menu::draw(Player* player)
 {
-	BeginDrawing();
-	ClearBackground(RAYWHITE);
 	player->drawMe();
-	EndDrawing();
+	for (int i = 0; i < cantBalls; i++)
+	{
+
+	}
 }
