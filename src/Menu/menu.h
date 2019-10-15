@@ -2,13 +2,22 @@
 #define MENU_H
 #include "Player/Player.h"
 #include "ball/ball.h"
+#include "raylib.h"
+#include "gameScreen/GameScreen.h"
+namespace menu
+{
 class Menu
 {
 public:
-	Menu();
-	void init();
-	void update(Player* player,Ball* balls[]);
-	void draw(Player* player);
+	Menu(Texture2D newTitleTexture, Texture2D newPlayTexture, Texture2D newExitTexture);
+	GameScreen update(Player* player, Ball* ball);
+	void draw(Player* player, Ball* ball);
 private:
+	Texture2D titleTexture;
+	Texture2D playTexture;
+	Texture2D exitTexture;
+	void colisionWithTexture(Ball* ball);
+	bool playIsPressed;
 };
+}
 #endif

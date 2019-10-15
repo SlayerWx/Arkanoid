@@ -21,15 +21,50 @@
   <ItemGroup>
     <ClCompile Include="..\src\ArkanoidGame\arkanoid_game.cpp" />
     <ClCompile Include="..\src\ball\ball.cpp" />
+    <ClCompile Include="..\src\Game\Game.cpp" />
+    <ClCompile Include="..\src\Level\Level.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\Menu\menu.cpp" />
+    <ClCompile Include="..\src\Options\options.cpp" />
     <ClCompile Include="..\src\Player\Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\ArkanoidGame\arkanoid_game.h" />
     <ClInclude Include="..\src\ball\ball.h" />
+    <ClInclude Include="..\src\gameScreen\GameScreen.h" />
+    <ClInclude Include="..\src\Game\Game.h" />
+    <ClInclude Include="..\src\Level\Level.h" />
     <ClInclude Include="..\src\Menu\menu.h" />
+    <ClInclude Include="..\src\Options\options.h" />
     <ClInclude Include="..\src\Player\Player.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\resource\assets\img\0.png" />
+    <Image Include="..\resource\assets\img\10.png" />
+    <Image Include="..\resource\assets\img\100.png" />
+    <Image Include="..\resource\assets\img\20.png" />
+    <Image Include="..\resource\assets\img\30.png" />
+    <Image Include="..\resource\assets\img\40.png" />
+    <Image Include="..\resource\assets\img\50.png" />
+    <Image Include="..\resource\assets\img\60.png" />
+    <Image Include="..\resource\assets\img\70.png" />
+    <Image Include="..\resource\assets\img\80.png" />
+    <Image Include="..\resource\assets\img\90.png" />
+    <Image Include="..\resource\assets\img\B.png" />
+    <Image Include="..\resource\assets\img\Back.png" />
+    <Image Include="..\resource\assets\img\Exit.png" />
+    <Image Include="..\resource\assets\img\G.png" />
+    <Image Include="..\resource\assets\img\Kenney.nl\png\ballGrey.png" />
+    <Image Include="..\resource\assets\img\Kenney.nl\png\element_grey_diamond_glossy.png" />
+    <Image Include="..\resource\assets\img\Kenney.nl\png\element_grey_rectangle.png" />
+    <Image Include="..\resource\assets\img\Kenney.nl\png\Player.png" />
+    <Image Include="..\resource\assets\img\Play.png" />
+    <Image Include="..\resource\assets\img\R.png" />
+    <Image Include="..\resource\assets\img\RGB.png" />
+    <Image Include="..\resource\assets\img\Title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\resource\assets\img\Kenney.nl\readme.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

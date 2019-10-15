@@ -28,6 +28,24 @@
     <Filter Include="src\Menu">
       <UniqueIdentifier>{02b04c3f-c84a-400e-848b-6dfb8b73b7b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Options">
+      <UniqueIdentifier>{d5b2b352-e186-4d82-8f49-3f44a4862a70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource\assets\img\Kenney.nl">
+      <UniqueIdentifier>{d67a1cc4-8db6-45d2-bc5d-f497fea70202}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource\assets\img\Kenney.nl\png">
+      <UniqueIdentifier>{069f424d-3f4f-4085-89b4-0bcad55b7b1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Game">
+      <UniqueIdentifier>{c49cc522-7582-4fb8-a9bd-4b24d13b8da2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Level">
+      <UniqueIdentifier>{b78303da-9aa1-46ef-bedc-8b3b9edec6b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gameScreen">
+      <UniqueIdentifier>{ba85285f-c9f1-4a43-8662-4b8992458ceb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
@@ -45,6 +63,15 @@
     <ClCompile Include="..\src\Menu\menu.cpp">
       <Filter>src\Menu</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Options\options.cpp">
+      <Filter>src\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Game\Game.cpp">
+      <Filter>src\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Level\Level.cpp">
+      <Filter>src\Level</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\ball\ball.h">
@@ -59,5 +86,93 @@
     <ClInclude Include="..\src\Menu\menu.h">
       <Filter>src\Menu</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\Options\options.h">
+      <Filter>src\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Game\Game.h">
+      <Filter>src\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Level\Level.h">
+      <Filter>src\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gameScreen\GameScreen.h">
+      <Filter>src\gameScreen</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\resource\assets\img\0.png">
+      <Filter>resource\assets\img</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\10.png">
+      <Filter>resource\assets\img</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\20.png">
+      <Filter>resource\assets\img</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\30.png">
+      <Filter>resource\assets\img</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\40.png">
+      <Filter>resource\assets\img</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\50.png">
+      <Filter>resource\assets\img</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\60.png">
+      <Filter>resource\assets\img</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\70.png">
+      <Filter>resource\assets\img</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\80.png">
+      <Filter>resource\assets\img</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\90.png">
+      <Filter>resource\assets\img</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\100.png">
+      <Filter>resource\assets\img</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\B.png">
+      <Filter>resource\assets\img</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\Back.png">
+      <Filter>resource\assets\img</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\Exit.png">
+      <Filter>resource\assets\img</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\G.png">
+      <Filter>resource\assets\img</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\Play.png">
+      <Filter>resource\assets\img</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\R.png">
+      <Filter>resource\assets\img</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\RGB.png">
+      <Filter>resource\assets\img</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\Title.png">
+      <Filter>resource\assets\img</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\Kenney.nl\png\ballGrey.png">
+      <Filter>resource\assets\img\Kenney.nl\png</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\Kenney.nl\png\element_grey_diamond_glossy.png">
+      <Filter>resource\assets\img\Kenney.nl\png</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\Kenney.nl\png\element_grey_rectangle.png">
+      <Filter>resource\assets\img\Kenney.nl\png</Filter>
+    </Image>
+    <Image Include="..\resource\assets\img\Kenney.nl\png\Player.png">
+      <Filter>resource\assets\img\Kenney.nl\png</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\resource\assets\img\Kenney.nl\readme.txt">
+      <Filter>resource\assets\img\Kenney.nl</Filter>
+    </Text>
   </ItemGroup>
 </Project>
