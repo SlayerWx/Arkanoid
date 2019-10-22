@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "gameScreen/GameScreen.h"
+int currentLevel = 0;
 Game::Game()
 {
 	for (int i = 0;i< cantLevelsInGame;i++)
@@ -7,6 +8,7 @@ Game::Game()
 		lvl[i] = new Level();
 	}
 	currentLevel = 0;
+	firstFrame = true;
 }
 void Game::init(Player* player)
 {
@@ -66,6 +68,12 @@ void Game::init(Player* player)
 }
 void Game::update(Player* player, Ball* ball[])
 {
+	if (firstFrame)
+	{
+		currentLevel = 0;
+		init(player);
+		firstFrame = false;
+	}
 	if (lvl[currentLevel]->AllBarInvisible(ball, currentLevel, cantLevelsInGame,player))
 	{
 		currentLevel++;
@@ -73,7 +81,11 @@ void Game::update(Player* player, Ball* ball[])
 		cout << "currentLevel:"<< currentLevel+1 << endl;
 #endif
 	}
-	lvl[currentLevel]->update(player,ball,currentLevel,cantLevelsInGame);
+	 lvl[currentLevel]->update(player,ball,currentLevel,cantLevelsInGame);
+	 if (currentLevel > 2)
+	 {
+		 firstFrame = true;
+	 }
 }
 void Game::Draw(Player* player, Ball* ball[])
 {

@@ -32,7 +32,7 @@ void Credits::draw(Player* player, Ball* ball)
 	DrawText("Assets: Kenney.nl", GetScreenWidth()/3, 85, 30, BLACK);
 	if (player->getLife() > 0)
 	{
-		DrawText("YOU WIN!", GetScreenWidth() / 3, 105, 30, BLACK);
+		DrawText("YOU WIN!", GetScreenWidth() / 3, 205, 30, BLACK);
 	}
 	else
 	{

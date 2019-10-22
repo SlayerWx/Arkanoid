@@ -4,6 +4,7 @@
 #include "ball/ball.h"
 #include "raylib.h"
 #include "gameScreen/GameScreen.h"
+#include "Game/Game.h"
 namespace menu
 {
 class Menu
@@ -17,7 +18,7 @@ private:
 	Texture2D titleTexture;
 	Texture2D playTexture;
 	Texture2D exitTexture;
-	void colisionWithTexture(Ball* ball);
+	void colisionWithTexture(Ball* ball, Player* player);
 	bool playIsPressed;
 	bool closeGame;
 	void menuInit(Player* player, Ball* ball);

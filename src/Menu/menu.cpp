@@ -17,7 +17,7 @@ GameScreen Menu::update(Player* player, Ball* ball)
 	menuInit(player,ball);
 	player->move();
 	ball->ShotingMe(player->isShotBalls());
-	colisionWithTexture(ball);
+	colisionWithTexture(ball,player);
 	ball->moveInMenu(player);
 	if (playIsPressed)
 	{
@@ -40,7 +40,7 @@ void Menu::draw(Player* player, Ball* ball)
 		,0,GetScreenHeight()-20,15,BLACK);
 
 }
-void Menu::colisionWithTexture(Ball* ball)
+void Menu::colisionWithTexture(Ball* ball,Player* player)
 {
 	//play
 	if (ball->getPosition().x > distanceOfTheLeftEdgePlay && ball->getPosition().x < distanceOfTheLeftEdgePlay + 
@@ -48,6 +48,8 @@ void Menu::colisionWithTexture(Ball* ball)
 	{
 		ball->setStatus(STAY);
 		playIsPressed = true;
+		player->setLife(player->getMaxLife());
+		currentLevel = 1;
 	}
 	//exit
 	if (ball->getPosition().x > GetScreenWidth() - playTexture.width && GetScreenWidth() - distanceOfTheLeftEdgePlay
@@ -80,6 +82,7 @@ void Menu::menuInit(Player* player, Ball* ball)
 		player->setPlayerPosition(static_cast<float>((GetScreenWidth()/2)- (player->GetBody().width / 2)),
 			player->playerPosition().y);
 		firstFrame = false;
+		
 	}
 }
 }

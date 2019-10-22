@@ -5,6 +5,7 @@
 #include "Player/Player.h"
 #include "ball/ball.h"
 const int cantLevelsInGame = 3;
+extern int currentLevel;
 class Game
 {
 public:
@@ -14,6 +15,7 @@ public:
 	void update(Player* player, Ball* ball[]);
 	void Draw(Player* player, Ball* ball[]);
 	bool endGame();
+	bool firstFrame;
 
 private:
 	Level* lvl[cantLevelsInGame];
