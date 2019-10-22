@@ -7,6 +7,9 @@ Player::Player(Vector2 initialPosition, Vector2 newSize, int newLife,Texture2D n
 	size = newSize;
 	life = newLife;
 	myTexture = newTexture;
+	newTexture.width /= 2;
+	newTexture.height /= 2;
+	myLifeTexture = newTexture;
 	myColor = WHITE;
 }
 
@@ -82,4 +85,8 @@ void Player::setLife(int newLife)
 Texture2D Player::GetBody()
 {
 	return myTexture;
+}
+Texture2D Player::GetLifeBody()
+{
+	return myLifeTexture;
 }

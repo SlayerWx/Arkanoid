@@ -29,6 +29,11 @@ void Level::draw(Player* player, Ball* ball[], int currentLevel, int cantLevelsI
 {
 	if (currentLevel < cantLevelsInGame)
 	{
+		for (int i = 0; i < player->getLife(); i++)
+		{
+			DrawTexture(player->GetLifeBody(), i *player->GetLifeBody().width, GetScreenHeight()
+				- player->GetLifeBody().height, player->getCustomColor());
+		}
 		player->drawMe();
 		for (int i = 0; i < Ball::getLength(); i++)
 		{

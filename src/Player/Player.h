@@ -6,10 +6,11 @@ class Player
 private:
 	Vector2 position;
 	Vector2 size;
-	int life;
 	static int speed;
 	Texture2D myTexture;
+	Texture2D myLifeTexture;
 	Color myColor;
+	int life;
 public:
 	Player(Vector2 initialPosition,Vector2 newSize,int newLife,Texture2D newTexture);
 	void drawMe();
@@ -25,6 +26,7 @@ public:
 	void setLife(int newLife);
 	bool backToMenu();
 	Texture2D GetBody();
+	Texture2D GetLifeBody();
 };
 #endif
 
