@@ -21,6 +21,8 @@
   <ItemGroup>
     <ClCompile Include="..\src\ArkanoidGame\arkanoid_game.cpp" />
     <ClCompile Include="..\src\ball\ball.cpp" />
+    <ClCompile Include="..\src\Bar\Bar.cpp" />
+    <ClCompile Include="..\src\Credits\Credits.cpp" />
     <ClCompile Include="..\src\Game\Game.cpp" />
     <ClCompile Include="..\src\Level\Level.cpp" />
     <ClCompile Include="..\src\main.cpp" />
@@ -31,6 +33,8 @@
   <ItemGroup>
     <ClInclude Include="..\src\ArkanoidGame\arkanoid_game.h" />
     <ClInclude Include="..\src\ball\ball.h" />
+    <ClInclude Include="..\src\Bar\Bar.h" />
+    <ClInclude Include="..\src\Credits\Credits.h" />
     <ClInclude Include="..\src\gameScreen\GameScreen.h" />
     <ClInclude Include="..\src\Game\Game.h" />
     <ClInclude Include="..\src\Level\Level.h" />
@@ -55,8 +59,8 @@
     <Image Include="..\resource\assets\img\Exit.png" />
     <Image Include="..\resource\assets\img\G.png" />
     <Image Include="..\resource\assets\img\Kenney.nl\png\ballGrey.png" />
+    <Image Include="..\resource\assets\img\Kenney.nl\png\bar.png" />
     <Image Include="..\resource\assets\img\Kenney.nl\png\element_grey_diamond_glossy.png" />
-    <Image Include="..\resource\assets\img\Kenney.nl\png\element_grey_rectangle.png" />
     <Image Include="..\resource\assets\img\Kenney.nl\png\Player.png" />
     <Image Include="..\resource\assets\img\Play.png" />
     <Image Include="..\resource\assets\img\R.png" />
@@ -144,9 +148,7 @@
       </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy "$(SolutionDir)raylib.dll" "$(OutDir)" /y
-mkdir "$(OutDir)assets" /y
-xcopy "$(SolutionDir)resource\assets" "$(OutDir)assets" /s /y</Command>
+      <Command>"$(SolutionDir)laterCompilation.bat" "$(SolutionDir)" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -181,9 +183,7 @@ xcopy "$(SolutionDir)resource\assets" "$(OutDir)assets" /s /y</Command>
       </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy "$(SolutionDir)raylib.dll" "$(OutDir)" /y
-mkdir "$(OutDir)assets" /y
-xcopy "$(SolutionDir)resource\assets" "$(OutDir)assets" /s /y</Command>
+      <Command>"$(SolutionDir)laterCompilation.bat" "$(SolutionDir)" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

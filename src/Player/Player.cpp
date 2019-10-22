@@ -13,9 +13,10 @@ Player::Player(Vector2 initialPosition, Vector2 newSize, int newLife,Texture2D n
 void Player::drawMe()
 {
 #if DEBUG
-	//DrawRectangle(position.x, position.y, size.x, size.y, RED);
+	DrawRectangle(static_cast<int>(position.x), static_cast<int>(position.y), static_cast<int>(size.x), 
+		static_cast<int>(size.y), RED);
 #endif
-	DrawTexture(myTexture, position.x, position.y, myColor);
+	DrawTexture(myTexture, static_cast<int>(position.x), static_cast<int>(position.y), myColor);
 }
 
 void Player::move()
@@ -29,9 +30,22 @@ void Player::move()
 		position.x += speed * GetFrameTime();
 	}
 }
+bool Player::backToMenu()
+{
+	if (IsKeyDown(KEY_B))
+	{
+		return true;
+	}
+	return false;
+}
 Vector2 Player::playerPosition()
 {
 	return position;
+}
+void Player::setPlayerPosition(float x,float y)
+{
+	position.x = x;
+	position.y = y;
 }
 Vector2 Player::playerSize()
 {
@@ -56,4 +70,16 @@ void Player::customColor(Color newCustom)
 Color Player::getCustomColor()
 {
 	return myColor;
+}
+int Player::getLife()
+{
+	return life;
+}
+void Player::setLife(int newLife)
+{
+	life = newLife;
+}
+Texture2D Player::GetBody()
+{
+	return myTexture;
 }

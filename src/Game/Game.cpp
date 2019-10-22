@@ -1,5 +1,5 @@
 #include "Game.h"
-
+#include "gameScreen/GameScreen.h"
 Game::Game()
 {
 	for (int i = 0;i< cantLevelsInGame;i++)
@@ -8,43 +8,102 @@ Game::Game()
 	}
 	currentLevel = 0;
 }
-GameScreen Game::update(Player* player, Ball* ball)
+void Game::init(Player* player)
 {
-	switch (currentLevel)
+	refreshLogicArray();
+	//lvl 1(0)
+	for (int i = 0; i < countBarWidth; i++)
 	{
-	case 0:
-		lvl[0]->update(player,ball);
-		break;
-	case 1:
-		lvl[1]->update(player, ball);
-		break;
-	case 2:
-		lvl[2]->update(player, ball);
-		break;
+		for (int t = 0; t < countBarHeight; t++)
+		{
+			if (t % 2 == 0)
+			{
+				aux[t][i] = Brick::VISIBLE;
+			}
+			else
+			{
+				aux[t][i] = Brick::INVISIBLE;
+			}
+		}
 	}
-	return GAMEPLAY;
+	lvl[0]->setLevel(aux);
+	refreshLogicArray();
+	//lvl 2(1)
+	for (int i = 0; i < countBarHeight; i++)
+	{
+		for (int t = 0; t < countBarWidth; t++)
+		{
+			if (i == 0 || i == countBarHeight - 1 || t % 2 == 0)
+			{
+				aux[i][t] = Brick::VISIBLE;
+			}
+			else
+			{
+				aux[i][t] = Brick::INVISIBLE;
+			}
+		}
+	}
+	lvl[1]->setLevel(aux);
+	refreshLogicArray();
+	// lvl 3(2)
+	for (int i = 0; i < countBarHeight; i++)
+	{
+		for (int t = 0; t < countBarWidth; t++)
+		{
+			if (i == 0 || t == 0 || t== countBarWidth-1 || t % 2 == 0 || i % 2 == 0)
+			{
+				aux[i][t] = Brick::VISIBLE;
+			}
+			else
+			{
+				aux[i][t] = Brick::INVISIBLE;
+			}
+		}
+	}
+	lvl[2]->setLevel(aux);
+	refreshLogicArray();
+	player->setPlayerPosition(GetScreenWidth()/2.0f,player->playerPosition().y * 1.0f);
 }
-void Game::Draw(Player* player, Ball* ball)
+void Game::update(Player* player, Ball* ball[])
 {
-	switch (currentLevel)
+	if (lvl[currentLevel]->AllBarInvisible(ball, currentLevel, cantLevelsInGame))
 	{
-	case 0:
-		lvl[0]->draw(player, ball);
-		break;
-	case 1:
-		lvl[1]->draw(player, ball);
-		break;
-	case 2:
-		lvl[2]->draw(player, ball);
-		break;
+		currentLevel++;
+#if DEBUG
+		cout << "currentLevel:"<< currentLevel+1 << endl;
+#endif
+	}
+	lvl[currentLevel]->update(player,ball,currentLevel,cantLevelsInGame);
+}
+void Game::Draw(Player* player, Ball* ball[])
+{
+	lvl[currentLevel]->draw(player, ball,currentLevel, cantLevelsInGame);
+}
+void Game::refreshLogicArray()
+{
+	for (int i = 0; i < countBarHeight; i++)
+	{
+		for (int t = 0; t < countBarWidth; t++)
+		{
+			aux[i][t] = Brick::INVISIBLE;
+		}
 	}
 }
-
 Game::~Game()
 {
 	for (int i = 0; i < cantLevelsInGame; i++)
 	{
-		if(lvl[i])
-		delete lvl[i];
+		if (lvl[i])
+		{
+			delete lvl[i];
+		}
 	}
+}
+bool Game::endGame()
+{
+	if (currentLevel > cantLevelsInGame)
+	{
+		return true;
+	}
+	return false;
 }

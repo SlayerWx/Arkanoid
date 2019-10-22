@@ -12,12 +12,16 @@ public:
 	Menu(Texture2D newTitleTexture, Texture2D newPlayTexture, Texture2D newExitTexture);
 	GameScreen update(Player* player, Ball* ball);
 	void draw(Player* player, Ball* ball);
+	bool exitCloseGame();
 private:
 	Texture2D titleTexture;
 	Texture2D playTexture;
 	Texture2D exitTexture;
 	void colisionWithTexture(Ball* ball);
 	bool playIsPressed;
+	bool closeGame;
+	void menuInit(Player* player, Ball* ball);
+	bool firstFrame;
 };
 }
 #endif

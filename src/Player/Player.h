@@ -16,10 +16,15 @@ public:
 	void move();
 	Vector2 playerPosition();
 	Vector2 playerSize();
+	void setPlayerPosition(float x, float y);
 	static int getSpeed();
 	bool isShotBalls();
 	void customColor(Color newCustom);
 	Color getCustomColor();
+	int getLife();
+	void setLife(int newLife);
+	bool backToMenu();
+	Texture2D GetBody();
 };
 #endif
 

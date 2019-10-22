@@ -3,6 +3,7 @@
 #include "Menu/menu.h"
 #include "Options/options.h"
 #include "Game/Game.h"
+#include "Credits/Credits.h"
 namespace arkanoid
 {
 using namespace menu;
@@ -11,11 +12,11 @@ int ArkanoidGame::screenHeight = 0;
 options::Options* options;
 Menu* menu;
 Game* gameStage;
+Credits* credit;
 Player* player;
 Ball* balls[cantBalls];
 Vector2 PlayerSize = { 70,20 };
 int playerMaxLifes = 5;
-float initialSpeedBalls = 300;
 Vector2 savedBallsPosition = { -10,0 };
 int radiusBalls = 10;
 ArkanoidGame::ArkanoidGame(int newScreenWidth, int newScreenHeight)
@@ -59,19 +60,21 @@ void ArkanoidGame::game()
 	{
 		updateGame();
 		DrawGame();
-		changeStage();
-	}
+ 		changeStage();
+  	}
 }
 void ArkanoidGame::initGame()
 {
 	menu = new Menu(titleTexture,playTexture, exitTexture);
 	options = new options::Options(playTexture, backTexture, RGBoptionsTexture, RGBPorcentTexture, RGBtexture);
+	gameStage = new Game();
+	credit = new Credits(backTexture);
 
 	player = new Player({ static_cast<float>(ArkanoidGame::getGameScreenWidth()) / 2,
 						  static_cast<float>(ArkanoidGame::getGameScreenHeight()) - PlayerSize.y },PlayerSize, playerMaxLifes, playerTexture);
 	for (int i = 0; i < cantBalls; i++)
 	{
-		balls[i] = new Ball(savedBallsPosition, { initialSpeedBalls,initialSpeedBalls }, radiusBalls, INVISIBLE, ballTexture);
+		balls[i] = new Ball(savedBallsPosition, radiusBalls, INVISIBLE, ballTexture,i);
 		if (i == 0)
 		{
 			balls[0]->setStatus(STAY);
@@ -84,14 +87,31 @@ void ArkanoidGame::updateGame()
 	{
 	case MENU:
 		nextStage(menu->update(player,balls[0]));
+		if (menu->exitCloseGame())
+		{
+			inGame = false;
+		}
 		break;
 	case OPTIONS:
 		nextStage(options->update(player,balls[0]));
+		if (nextStatus == GAMEPLAY)
+		{
+			gameStage->init(player);
+		}
 		break;
 	case GAMEPLAY:
-		nextStage(gameStage->update(player, balls[0]));
+		gameStage->update(player, balls);
+		if (player->backToMenu())
+		{
+			nextStage(MENU);
+		}
+		if (gameStage->endGame())
+		{
+			nextStage(CREDITS);
+		}
 		break;
 	case CREDITS:
+		nextStage(credit->update(player, balls[0]));
 		break;
 	}
 }
@@ -108,9 +128,10 @@ void ArkanoidGame::DrawGame()
 		options->draw(player,balls[0]);
 		break;
 	case GAMEPLAY:
-		gameStage->Draw(player, balls[0]);
+		gameStage->Draw(player, balls);
 		break;
 	case CREDITS:
+		credit->draw(player, balls[0]);
 		break;
 	}
 	EndDrawing();
@@ -141,6 +162,7 @@ ArkanoidGame::~ArkanoidGame()
 	if (menu)   { delete menu; } 
 	if (options){ delete options; }
 	if (gameStage) { delete gameStage; }
+	if (credit) { delete credit; }
 
 	UnloadTexture(playTexture);
 	UnloadTexture(exitTexture);

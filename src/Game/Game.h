@@ -10,12 +10,16 @@ class Game
 public:
 	Game();
 	~Game();
-	GameScreen update(Player* player, Ball* ball);
-	void Draw(Player* player, Ball* ball);
+	void init(Player* player);
+	void update(Player* player, Ball* ball[]);
+	void Draw(Player* player, Ball* ball[]);
+	bool endGame();
 
 private:
 	Level* lvl[cantLevelsInGame];
-	short currentLevel;
+	int currentLevel;
+	void refreshLogicArray();
+	Brick::BarState aux[countBarHeight][countBarWidth];
 
 };
 #endif
