@@ -6,6 +6,7 @@ Player::Player(Vector2 initialPosition, Vector2 newSize, int newLife,Texture2D n
 	position = initialPosition;
 	size = newSize;
 	life = newLife;
+	maxLife = newLife;
 	myTexture = newTexture;
 	newTexture.width /= 2;
 	newTexture.height /= 2;
@@ -77,6 +78,10 @@ Color Player::getCustomColor()
 int Player::getLife()
 {
 	return life;
+}
+int Player::getMaxLife()
+{
+	return maxLife;
 }
 void Player::setLife(int newLife)
 {

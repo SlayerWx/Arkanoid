@@ -26,7 +26,18 @@ void Credits::draw(Player* player, Ball* ball)
 {
 	player->drawMe();
 	ball->drawMe();
-	DrawText("a",0,GetScreenHeight()-20,15,BLACK);
+	DrawTexture(backTexture, GetScreenWidth() - backTexture.width, GetScreenHeight() / 2, WHITE);
+	DrawText("Option Texture: es.cooltext.com", GetScreenWidth() / 4, 15, 30, BLACK);
+	DrawText("Programmer: Ruffo Maximiliano", GetScreenWidth() / 4, 45, 30, BLACK);
+	DrawText("Assets: Kenney.nl", GetScreenWidth()/3, 85, 30, BLACK);
+	if (player->getLife() > 0)
+	{
+		DrawText("YOU WIN!", GetScreenWidth() / 3, 105, 30, BLACK);
+	}
+	else
+	{
+		DrawText("YOU LOSE!", GetScreenWidth() / 3, 205, 30, BLACK);
+	}
 }
 void Credits::colisionWithTexture(Ball* ball)
 {
@@ -35,7 +46,7 @@ void Credits::colisionWithTexture(Ball* ball)
 		&&ball->getPosition().y < (GetScreenHeight() / 2) + backTexture.height)
 	{
 		ball->setStatus(STAY);
-		
+		backIsPressed = true;
 	}
 	//nothing
 	if (ball->getPosition().y < ball->getRadius() *-1.2)

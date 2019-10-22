@@ -66,7 +66,7 @@ void Game::init(Player* player)
 }
 void Game::update(Player* player, Ball* ball[])
 {
-	if (lvl[currentLevel]->AllBarInvisible(ball, currentLevel, cantLevelsInGame))
+	if (lvl[currentLevel]->AllBarInvisible(ball, currentLevel, cantLevelsInGame,player))
 	{
 		currentLevel++;
 #if DEBUG
@@ -101,7 +101,7 @@ Game::~Game()
 }
 bool Game::endGame()
 {
-	if (currentLevel > cantLevelsInGame)
+	if (currentLevel >= cantLevelsInGame)
 	{
 		return true;
 	}

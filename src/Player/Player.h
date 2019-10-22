@@ -11,6 +11,7 @@ private:
 	Texture2D myLifeTexture;
 	Color myColor;
 	int life;
+	int maxLife;
 public:
 	Player(Vector2 initialPosition,Vector2 newSize,int newLife,Texture2D newTexture);
 	void drawMe();
@@ -27,6 +28,7 @@ public:
 	bool backToMenu();
 	Texture2D GetBody();
 	Texture2D GetLifeBody();
+	int getMaxLife();
 };
 #endif
 

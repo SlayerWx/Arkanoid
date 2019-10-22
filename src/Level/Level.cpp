@@ -157,7 +157,7 @@ Level::~Level()
 		}
 	}
 }
-bool Level::AllBarInvisible(Ball* ball[], int currentLevel, int cantLevelsInGame)
+bool Level::AllBarInvisible(Ball* ball[], int currentLevel, int cantLevelsInGame,Player* player)
 {
 	if (currentLevel < cantLevelsInGame)
 	{
@@ -171,6 +171,11 @@ bool Level::AllBarInvisible(Ball* ball[], int currentLevel, int cantLevelsInGame
 					ball[i]->setStatus(STAY);
 				}
 			}
+			return true;
+		}
+		if (player->getLife() <= 0)
+		{
+			
 			return true;
 		}
 	}

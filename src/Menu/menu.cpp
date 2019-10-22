@@ -24,6 +24,7 @@ GameScreen Menu::update(Player* player, Ball* ball)
 		playIsPressed = false;
 		firstFrame = true;
 		return OPTIONS;
+		player->setLife(player->getMaxLife());
 	}
 	return MENU;
 }
@@ -33,11 +34,11 @@ void Menu::draw(Player* player, Ball* ball)
 	DrawTexture(exitTexture, GetScreenWidth() - playTexture.width, GetScreenHeight() / 2, WHITE);
 	player->drawMe();
 	ball->drawMe();
-	DrawTexture(titleTexture, (GetScreenWidth() / 2) - (titleTexture.width / 2), distanceOfTheUpEdgeTitle, WHITE);
-	DrawText("Arrows To Move and SpaceBar to Shot! Press B while playing to return to the menu!",0,GetScreenHeight()-20,15,BLACK);
-	DrawText("Option Texture: es.cooltext.com", 0, 0, 15, BLACK);
-	DrawText("programmer: Ruffo Maximiliano",0,15,15,BLACK);
-	DrawText("Assets: Kenney.nl",0,32,15,BLACK);
+	DrawTexture(titleTexture, (GetScreenWidth() / 2) - (titleTexture.width / 2), 
+		distanceOfTheUpEdgeTitle, WHITE);
+	DrawText("Arrows To Move and SpaceBar to Shot! Press B while playing to return to the menu!"
+		,0,GetScreenHeight()-20,15,BLACK);
+
 }
 void Menu::colisionWithTexture(Ball* ball)
 {

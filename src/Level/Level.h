@@ -19,7 +19,7 @@ public:
 	void draw(Player* player, Ball* ball[], int currentLevel,int cantLevelsInGame);
 	void CheckColisionBarWithBalls(Ball* ball[], int currentLevel, int cantLevelsInGame);
 	void setLevel(Brick::BarState newMapLogic[countBarHeight][countBarWidth]);
-	bool AllBarInvisible(Ball* ball[], int currentLevel, int cantLevelsInGame);
+	bool AllBarInvisible(Ball* ball[], int currentLevel, int cantLevelsInGame,Player* player);
 private:
 	Brick::Bar* map[countBarHeight][countBarWidth];
 };
