@@ -7,7 +7,6 @@ Bar::Bar(BarState newBarState)
 {
 	mySkin = LoadTexture("resource/assets/img/Kenney.nl/png/bar.png");
 	barStatus = newBarState;
-	remberFirstStatus = newBarState;
 	mySkin.width = static_cast<int>(ratioReductionTexture * 3);//mySkin.width / ratioReductionTexture;
 	mySkin.height = static_cast<int>(ratioReductionTexture);//mySkin.height / ratioReductionTexture;
 	position.x = 0;

@@ -1,5 +1,5 @@
 #include "Level.h"
-int diferenceSpaceSideBar = 2;
+int diferenceSpaceSideBar = 3;
 Level::Level()
 {
 	visibleBarNumber = 0;
@@ -71,9 +71,12 @@ void Level::CheckColisionBarWithBalls(Ball* ball[], int currentLevel, int cantLe
 							ball[e]->getPosition().x - ball[e]->getRadius() < map[i][t]->getPosition().x +
 							map[i][t]->getWidth())
 						{
-							ball[e]->revertToPositiveSpeedY();
-							map[i][t]->setStatus(Brick::INVISIBLE);
-							visibleBarNumber--;
+							if (map[i][t]->getStatus() == Brick::VISIBLE)
+							{
+								ball[e]->revertToPositiveSpeedY();
+								map[i][t]->setStatus(Brick::INVISIBLE);
+								visibleBarNumber--;
+							}
 						}
 						if (ball[e]->getPosition().y + ball[e]->getRadius() > map[i][t]->getPosition().y &&
 							ball[e]->getPosition().y + ball[e]->getRadius() < map[i][t]->getPosition().y
@@ -82,9 +85,12 @@ void Level::CheckColisionBarWithBalls(Ball* ball[], int currentLevel, int cantLe
 							ball[e]->getPosition().x - ball[e]->getRadius() < map[i][t]->getPosition().x +
 							map[i][t]->getWidth())
 						{
-							ball[e]->revertToNegativeSpeedY();
-							map[i][t]->setStatus(Brick::INVISIBLE);
-							visibleBarNumber--;
+							if (map[i][t]->getStatus() == Brick::VISIBLE)
+							{
+								ball[e]->revertToNegativeSpeedY();
+								map[i][t]->setStatus(Brick::INVISIBLE);
+								visibleBarNumber--;
+							}
 						}
 						//////////////////////////////////
 						if (ball[e]->getPosition().x - ball[e]->getRadius() < map[i][t]->getPosition().x +
@@ -95,9 +101,12 @@ void Level::CheckColisionBarWithBalls(Ball* ball[], int currentLevel, int cantLe
 							ball[e]->getPosition().y - ball[e]->getRadius() < map[i][t]->getPosition().y +
 							map[i][t]->getHeigth())
 						{
-							ball[e]->revertToPositiveSpeedX();
-							map[i][t]->setStatus(Brick::INVISIBLE);
-							visibleBarNumber--;
+							if (map[i][t]->getStatus() == Brick::VISIBLE)
+							{
+								ball[e]->revertToPositiveSpeedX();
+								map[i][t]->setStatus(Brick::INVISIBLE);
+								visibleBarNumber--;
+							}
 						}
 						if (ball[e]->getPosition().x + ball[e]->getRadius() > map[i][t]->getPosition().x &&
 							ball[e]->getPosition().x + ball[e]->getRadius() < map[i][t]->getPosition().x +
@@ -105,9 +114,12 @@ void Level::CheckColisionBarWithBalls(Ball* ball[], int currentLevel, int cantLe
 							ball[e]->getPosition().y - ball[e]->getRadius() < map[i][t]->getPosition().y &&
 							ball[e]->getPosition().y + ball[e]->getRadius() > map[i][t]->getPosition().y)
 						{
-							ball[e]->revertToNegativeSpeedX();
-							map[i][t]->setStatus(Brick::INVISIBLE);
-							visibleBarNumber--;
+							if (map[i][t]->getStatus() == Brick::VISIBLE)
+							{
+								ball[e]->revertToNegativeSpeedX();
+								map[i][t]->setStatus(Brick::INVISIBLE);
+								visibleBarNumber--;
+							}
 						}
 
 					}
@@ -130,6 +142,9 @@ void Level::setLevel(Brick::BarState newMapLogic[countBarHeight][countBarWidth])
 			map[i][t]->setPosition(diferenceSpaceSideBar+t*map[i][t]->getWidth(),i*map[i][t]->getHeigth());
 		}
 	}
+#if DEBUG
+	cout << visibleBarNumber << endl;
+#endif
 }
 Level::~Level()
 {

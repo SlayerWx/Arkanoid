@@ -4,7 +4,9 @@
 #include "ball/ball.h"
 #include "gameScreen/GameScreen.h"
 #include "Bar/Bar.h"
+#if DEBUG
 #include <iostream>
+#endif
 using namespace std;
 class Level
 {

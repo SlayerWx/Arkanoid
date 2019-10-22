@@ -18,7 +18,6 @@ public:
 	void setPosition(int x, int y);
 	Vector2 getPosition();
 	BarState barStatus;
-	BarState remberFirstStatus;
 	void setStatus(BarState newStatus);
 	BarState getStatus();
 	int getWidth();
