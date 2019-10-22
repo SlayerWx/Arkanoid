@@ -36,8 +36,8 @@ public:
 	void move(Player* player);
 	Vector2 getSpeed();
 	void setSpeed(float x, float y);
-	void revertToNegativeSpeedX();
 	void revertToPositiveSpeedX();
+	void revertToNegativeSpeedX();
 	void revertToPositiveSpeedY();
 	void revertToNegativeSpeedY();
 

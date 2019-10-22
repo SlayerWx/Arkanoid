@@ -95,7 +95,7 @@ void Level::CheckColisionBarWithBalls(Ball* ball[], int currentLevel, int cantLe
 							ball[e]->getPosition().y - ball[e]->getRadius() < map[i][t]->getPosition().y +
 							map[i][t]->getHeigth())
 						{
-							ball[e]->revertToNegativeSpeedX();
+							ball[e]->revertToPositiveSpeedX();
 							map[i][t]->setStatus(Brick::INVISIBLE);
 							visibleBarNumber--;
 						}
@@ -105,7 +105,7 @@ void Level::CheckColisionBarWithBalls(Ball* ball[], int currentLevel, int cantLe
 							ball[e]->getPosition().y - ball[e]->getRadius() < map[i][t]->getPosition().y &&
 							ball[e]->getPosition().y + ball[e]->getRadius() > map[i][t]->getPosition().y)
 						{
-							ball[e]->revertToPositiveSpeedX();
+							ball[e]->revertToNegativeSpeedX();
 							map[i][t]->setStatus(Brick::INVISIBLE);
 							visibleBarNumber--;
 						}

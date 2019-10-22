@@ -95,9 +95,13 @@ void Ball::move(Player* player)
 				speed.y *= -1;
 			}
 		}
-		if (((position.x + radius) > GetScreenWidth()) || ((position.x - radius) < 0))
+		if ((position.x + radius) > GetScreenWidth())
 		{
-			speed.x *= -1;
+			revertToNegativeSpeedX();
+		}
+		if ((position.x - radius) < 0)
+		{
+			revertToPositiveSpeedX();
 		}
 		if ((position.y - radius -1) < 0)
 		{
@@ -124,14 +128,14 @@ void Ball::move(Player* player)
 	}
 	beforePosition = position;
 }
-void Ball::revertToNegativeSpeedX()
+void Ball::revertToPositiveSpeedX()
 {
 	if (speed.x < 0)
 	{
 		speed.x = speed.x *-1;
 	}
 }
-void Ball::revertToPositiveSpeedX()
+void Ball::revertToNegativeSpeedX()
 {
 	if (speed.x > 0)
 	{
